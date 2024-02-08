@@ -1,13 +1,15 @@
 // ProductCard.js
 import React, { useState } from 'react';
 import { Card, Row, Col, Container } from 'react-bootstrap';
-import Heart from '../images/Heart.png';
+import heartUnFill from '../images/heartUnFill.svg';
+import heartFill from '../images/heartFill.svg';
 import QuantitySelector from './QuantitySelector';
 import ProductInquiryForm from './ProductInquiryForm';
 import emailjs from '@emailjs/browser';
 
 
 const ProductCard = ({ imageUrl, name, description, price, onPurchase }) => {
+  const [isLiked, seIsLiked] = useState(false);
   const [show, setShow] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [/*stateMessage,*/ setStateMessage] = useState('');
@@ -32,7 +34,7 @@ const ProductCard = ({ imageUrl, name, description, price, onPurchase }) => {
   };
   return (
     <>
-      <Card style={{ border: 'none', padding: '20px', marginTop: '-40px' }}>
+      <Card style={{ border: 'none', padding: '20px', marginTop: '-40px', backgroundColor: "transparent", marginBottom: "50px" }}>
         <Row>
           <Col xs={12} md={6}>
             <Card.Img
@@ -52,10 +54,13 @@ const ProductCard = ({ imageUrl, name, description, price, onPurchase }) => {
               <Container>
                 <div className="Product_label d-md-flex justify-content-between" style={{ marginBottom: '10px' }}>
                   <Card.Title style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{name}</Card.Title>
-                  <img src={Heart} alt="Heart" style={{ width: '20px', height: '17px', marginTop: '6px' }} />
+                  <div onClick={() => seIsLiked(!isLiked)} style={{cursor: "pointer"}}>
+                    <img src={isLiked ? heartFill : heartUnFill} alt="Heart" style={{width: '20px', height: '20px', marginTop: '6px'}}/>
+                  </div>
+
                 </div>
 
-                <div style={{ marginBottom: '20px' }}>
+                <div style={{marginBottom: '20px' }}>
                   <Col xs={9}>
                     {Array.from({ length: 5 }).map((_, index) => (
                       <svg key={index} xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17" fill="none" style={{ marginRight: '2px' }}>
