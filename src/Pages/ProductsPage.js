@@ -8,11 +8,17 @@ import Footer from '../components/Footer';
 import ProductCard from '../components/Product_card';
 import ProductCare from '../components/Productscare';
 import BreadcrumbLink from '../components/BreadcrumbLink';
+import { useEffect } from 'react';
 
 
 import '../css/scss/_breadcrumbsLink.scss';
 
 function ProductsPage() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { ProductId } = useParams();
   const product = products.find((product) => product.id === ProductId);
 

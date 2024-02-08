@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Breadcrumb } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import products from '../data/ProductsData';
 import Header from '../components/Header';
@@ -13,6 +14,10 @@ import emailjs from '@emailjs/browser';
 import '../css/scss/_breadcrumbsLink.scss';
 
 function PlantsStories() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const [show, setShow] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
