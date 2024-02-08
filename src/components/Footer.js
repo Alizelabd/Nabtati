@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import React, { useEffect, useState, useRef } from 'react';
+import { Container, Col, Form, Button } from 'react-bootstrap';
 import logo from '../images/greenLogo.svg';
 import '../css/scss/_Footer.scss'; 
+import { Link } from 'react-router-dom';
 
 import ProductInquiryForm from './ProductInquiryForm';
 import emailjs from '@emailjs/browser';
+import toast from 'react-hot-toast';
 
 const Footer = () => {
   const [iconSize, setIconSize] = useState(130);
@@ -27,63 +29,80 @@ const Footer = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [setStateMessage] = useState('');
 
+  const [email, setEmail] = useState('')
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleInquirySubmit = (templateFormData) => {
+  const form = useRef();
+
+  console.log(email)
+
+  const handleInquirySubmit = (e) => {
+    const templateFormData = {
+      from_name: "",
+      email_id: email,
+      message: "",
+    };
+    e.preventDefault();
+
     emailjs
       .send('service_br7pc65', 'template_d675cby', templateFormData, '0Vrk_eCV-opU4mZPo')
       .then((result) => {
-        setStateMessage('تم إرسال البريد بنجاح');
-        setShowAlert(true);
+        // setStateMessage('تم إرسال البريد بنجاح');
+        // setShowAlert(true);
         console.log(result.status);
+        toast.success("تم تسجيلك في النشرة البريدية")
         handleClose();
       })
       .catch((error) => {
-        setStateMessage('حدث خطأ ما لم يتم إرسال البريد');
-        setShowAlert(true);
-        console.log(error);
+        // setStateMessage('حدث خطأ ما لم يتم إرسال البريد');
+        // setShowAlert(true);
+        console.log('FAILED...', error.text);
+        toast.error("حدث خطأ")
       });
   };
 
   return (
     <footer className="footer">
       <Container>
-        <Row className="d-flex align-items-center">
+        <div className="d-flex align-items-center flex-wrap justify-content-around">
           <Col md={2}>
             <img src={logo} alt="Logo" className="icon" style={{ width: `${iconSize}px`, height: `${iconSize}px` }} />
           </Col>
 
-          <Col md={3} className="mb-3">
+          <Col md={3} className="mb-3 p-2">
             <h5 style={{ color: '#3F5B4D', fontWeight: '700' }}>موقع نبتتي</h5>
             <ul className="list-unstyled">
-              <li><a href="/" className="link">عن نبتتي</a></li>
-              <li><a href="/" className="link">المنتجات</a></li>
+              <Link className='link d-block' to={`/AboutUs`}> عن نبتتي</Link>
+              <Link className='link d-block' to={`/OurProducts`}>منتجاتنا</Link>
             </ul>
           </Col>
 
-          <Col md={3} className="mb-3">
+          <Col md={3} className="mb-3 p-2">
             <h5 style={{ color: '#3F5B4D', fontWeight: '700' }}>مجتمع نبتتي</h5>
             <ul className="list-unstyled">
-              <li><a href="/" className="link">اهداء الى صديق</a></li>
-              <li><a href="/" className="link">ارسل هدايا</a></li>
+              <Link onClick={handleShow} className='link d-block'>اهداء الى صديق</Link>
+              <Link onClick={handleShow} className='link d-block'>ارسل هدايا</Link>
             </ul>
           </Col>
 
           <Col md={4} className="mb-3" style={{ marginTop: '20px', color: '#3F5B4D', fontWeight: '700' }}>
-            <Form className="d-flex flex-column align-items-start subscription-form">
+
+            <Form ref={form} onSubmit={handleInquirySubmit} className="d-flex flex-column align-items-start subscription-form">
               <Form.Group controlId="subscriptionForm" className="mb-0">
-                <Form.Label className="mr-2">النشرة البريدية</Form.Label>
+                <Form.Label className="mr-2 text-dark">النشرة البريدية</Form.Label>
                 <br />
                 <Form.Text className="text-muted">كن مطلعًا على آخر الأخبار موقع نبتتي</Form.Text>
                 <div className="d-flex">
-                  <Form.Control type="email" placeholder="البريد الالكتروني" className="form-control" />
-                  <Button className="button" onClick={handleShow}>اشتراك</Button>
+                  <Form.Control onChange={e => setEmail(e.target.value)} type="email" placeholder="البريد الالكتروني" className="form-control" name="user_email"/>
+                  <Button className="button" type='submit' >اشتراك</Button>
                 </div>
               </Form.Group>
             </Form>
+
           </Col>
-        </Row>
+        </div>
       </Container>
 
       <ProductInquiryForm
