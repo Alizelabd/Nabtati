@@ -1,5 +1,5 @@
 {
-  "name": "task-2",
+  "name": "nabtati",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -46,5 +46,9 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-sass": "^5.1.0"
-  }
+  },
+  "description": "",
+  "main": "gulpfile.js",
+  "author": "",
+  "license": "ISC"
 }
