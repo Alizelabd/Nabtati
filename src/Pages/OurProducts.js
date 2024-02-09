@@ -6,7 +6,7 @@ import AnimatedPage from "../components/AnimatedPage";
 function OurProducts() {
   return (
     <>
-      <AnimatedPage>
+      
         <Header />
         <div className="caption text-center py-4">
           <h2 className="fw-bold">منتجاتنا</h2>
@@ -16,7 +16,7 @@ function OurProducts() {
           <Prodcuts />
         </Container>
         <Footer />
-      </AnimatedPage>
+      
     </>
   );
 }

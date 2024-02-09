@@ -51,7 +51,7 @@ function PlantsStories() {
 
   return (
     <div className="story-section">
-      <AnimatedPage>
+      
         <Header />
         <Container className="py-4">
           <Container>
@@ -108,7 +108,7 @@ function PlantsStories() {
           setStateMessage={setStateMessage}
           onInquirySubmit={handleInquirySubmit}
         />
-      </AnimatedPage>
+      
     </div>
   );
 }

@@ -22,7 +22,7 @@ function ProductsPage() {
 
   return (
     <>
-      <AnimatedPage>
+      
         <Header />
 
         <Container>
@@ -62,7 +62,7 @@ function ProductsPage() {
           </div>
         </Container>
         <Footer />
-      </AnimatedPage>
+      
     </>
   );
 }
