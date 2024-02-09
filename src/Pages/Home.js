@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import searchIcon from '../images/search 1.svg';
+
 import Footer from '../components/Footer';
 import UserReviewPage from "../components/UserReviewPage";
 import FamousPlant from '../components/FamousPlant';
@@ -12,11 +12,11 @@ function Home() {
             <div className="main-hero border-bottom-rad pb-3">
                 <Header />
                 <Container className="text-center position-relative">
-                    <div className="search-div">
+                    {/* <div className="search-div">
                         <input type="search" placeholder="البحث" />
                         <img className="search-icon" src={searchIcon} alt="search-icon" />
-                    </div>
-                    <div className="text-hero mt-5">
+                    </div> */}
+                    <div className="text-hero mt-1">
                         <div className="title my-3">
                             <h1>مرحباً بك في </h1>
                             <span>نبتتي</span>
