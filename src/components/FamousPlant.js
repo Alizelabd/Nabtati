@@ -4,7 +4,8 @@ import FeeImg from '../images/fe_story.jpeg';
 import nseemImg from '../images/naseem.jpeg';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
 import { Link } from "react-router-dom";
 
 
@@ -12,6 +13,8 @@ function FamousPlant() {
     return (
         <>
             <Swiper
+                navigation={true}
+                modules={[Navigation]}
                 slidesPerView={1}
                 spaceBetween={30}
                 centeredSlides={true}
