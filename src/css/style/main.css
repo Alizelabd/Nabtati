@@ -4,7 +4,6 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   font-family: "Tajawal", sans-serif;
-  color: #fbfbfb;
 }
 
 body {
@@ -164,16 +163,14 @@ nav .new-sign-in:hover {
 .swiper {
   padding: 60px 100px !important;
 }
-.swiper .swiper-slide {
-  background-color: #ffffff;
-}
+
 
 .famous-plants .slid-div {
   border-radius: 25px;
   direction: ltr;
   margin: auto;
   padding: 30px;
-  min-height: 400px;
+  min-height: 500px;
   align-items: center;
 }
 
@@ -193,6 +190,14 @@ nav .new-sign-in:hover {
     justify-content: center;
   }
 }
+.swiper-button-prev {
+  color: #88ab8e !important;
+}
+
+.swiper-button-next {
+  color: #88ab8e !important;
+}
+
 .famous-plants .slid-div .image-plant {
   width: 250px;
   height: 250px;
@@ -207,7 +212,6 @@ nav .new-sign-in:hover {
 
 .famous-plants .slid-div .info {
   text-align: center;
-  background-color: #ffffff;
   border-radius: 40px;
 }
 

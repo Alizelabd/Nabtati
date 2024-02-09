@@ -39,16 +39,19 @@ const Footer = () => {
   console.log(email)
 
   const handleInquirySubmit = (e) => {
-    const templateFormData = {
-      from_name: "",
-      email_id: email,
-      message: "",
-    };
     e.preventDefault();
+    const templateFormData = {
+      from_name: "unknow",
+      email_id: email,
+      message: "unknow",
+    };
 
-    emailjs
-      .send('service_br7pc65', 'template_d675cby', templateFormData, '0Vrk_eCV-opU4mZPo')
-      .then((result) => {
+    emailjs.send(
+      "service_br7pc65",
+      "template_d675cby",
+      templateFormData,
+      "0Vrk_eCV-opU4mZPo"
+    ).then((result) => {
         // setStateMessage('تم إرسال البريد بنجاح');
         // setShowAlert(true);
         console.log(result.status);
