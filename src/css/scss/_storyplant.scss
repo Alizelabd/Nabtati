@@ -79,8 +79,12 @@
   .needs {
     flex-wrap: wrap;
   }
-  .box2_text{
+  .box2_text {
     border-left: none;
   }
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: $dark-green-color !important;
 }
 /* End Story Style*/

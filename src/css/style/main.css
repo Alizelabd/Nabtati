@@ -356,6 +356,11 @@ nav .new-sign-in:hover {
     border-left: none;
   }
 }
+.swiper-button-prev,
+.swiper-button-next {
+  color: #3f5b4d !important;
+}
+
 /* End Story Style*/
 /* product care style */
 .Care_label {
