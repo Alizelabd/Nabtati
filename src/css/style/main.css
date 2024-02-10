@@ -106,34 +106,6 @@ nav .new-sign-in:hover {
 .main-hero {
   background-color: #88ab8e;
 }
-.main-hero .search-div {
-  background-color: #ffffff;
-  text-align: center;
-  border-radius: 20px;
-  display: inline-flex;
-  align-items: center;
-  padding: 16px;
-  width: min(600px, 100%);
-  margin-top: 70px;
-}
-.main-hero .search-div input[type=search] {
-  flex-grow: 1;
-  background: none;
-  outline: none;
-  border: none;
-}
-.main-hero .search-div input[type=search]::placeholder {
-  font-weight: 500px;
-  font-size: 20px;
-}
-.main-hero .search-div .search-icon {
-  width: 40px;
-  height: 40px;
-  padding: 8px;
-  cursor: pointer;
-  border-radius: 32px;
-  box-shadow: -5px -5px 10px 0px #fff, 5px 5px 10px 0px rgba(170, 170, 204, 0.5);
-}
 
 .text-hero .title {
   display: inline-flex;
