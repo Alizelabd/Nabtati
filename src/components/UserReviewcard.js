@@ -10,7 +10,7 @@ const UserReviewCard = ({ userProfilePicture, reviewText, userName, starRating }
 
     <Container className='box-shadow' style={{borderRadius: '16px' }} >
 
-    <Card style={{ maxWidth: '450px',height:'400px', margin: '5px', border: 'none',padding:'10px'}}>
+    <Card style={{ maxWidth: '450px',minHeight:"330px", margin: '5px', border: 'none',padding:'10px', backgroundColor: "transparent"}}>
       <Card.Body>
 
       
