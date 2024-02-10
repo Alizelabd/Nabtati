@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import sabara from '../images/sabra.png';
 import Fee from '../images/fe.jpeg';
 import Nassem from '../images/naseem.jpeg';
-import like from '../images/likeicon.svg'
+import like from '../images/likeicon.svg';
+import {useState} from 'react';
+import productsData from '../data/ProductsData';
 function Prodcuts() {
     const [isLiked, setIsLiked] = useState(Array(productsData.length).fill(false));
 
