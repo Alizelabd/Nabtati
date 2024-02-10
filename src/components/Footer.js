@@ -41,9 +41,9 @@ const Footer = () => {
   const handleInquirySubmit = (e) => {
     e.preventDefault();
     const templateFormData = {
-      from_name: "unknow",
+      from_name: "",
       email_id: email,
-      message: "unknow",
+      message: "",
     };
 
     emailjs.send(
