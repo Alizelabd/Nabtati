@@ -1,8 +1,13 @@
 /* Start Header Style-------------*/
-nav { 
+nav {
   padding-bottom: 35px;
-  .navbar-nav{
-    gap: 10px;
+  .navbar-nav {
+    gap: 25px;
+  }
+  @include breakPoint("mobile") {
+    .navbar-nav {
+      gap: 5px;
+    }
   }
   .nav-link {
     font-size: clamp(16px, 20px, $font-size-vw);
@@ -25,27 +30,21 @@ nav {
     padding: 10px 15px;
     border: 2px solid;
   }
-  .sign-in{
+  .sign-in {
     background-color: $dark-green-color;
     border-color: transparent;
-    &:hover{
+    &:hover {
       background-color: transparent;
       border: 2px solid $dark-green-color;
     }
   }
-  .new-sign-in{
+  .new-sign-in {
     border: 2px solid $dark-green-color;
     color: $dark-green-color;
-    &:hover{
+    &:hover {
       background-color: $dark-green-color;
       color: $white-color;
     }
-  }
-}
-@include breakPoint("mobile") {
-  .navbar-nav {
-    gap: 5px;
-    
   }
 }
 /* End Header Style-------------*/

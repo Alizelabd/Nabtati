@@ -56,7 +56,12 @@ nav {
   padding-bottom: 35px;
 }
 nav .navbar-nav {
-  gap: 45px;
+  gap: 25px;
+}
+@media (max-width: 768px) {
+  nav .navbar-nav {
+    gap: 5px;
+  }
 }
 nav .nav-link {
   font-size: clamp(16px, 20px, 4vw);
@@ -96,11 +101,6 @@ nav .new-sign-in:hover {
   color: #ffffff;
 }
 
-@media (max-width: 768px) {
-  .navbar-nav {
-    gap: 10px;
-  }
-}
 /* End Header Style-------------*/
 /* Start Main Hero Style-------------*/
 .main-hero {

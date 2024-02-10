@@ -15,7 +15,6 @@ function Header() {
   const [setStateMessage] = useState('');
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const handleInquirySubmit = (templateFormData) => {
     emailjs
@@ -45,7 +44,6 @@ function Header() {
             <Link className='nav-link' to={`/AboutUs`}>عن نبتتي</Link>
           </Nav>
           <Nav className='sign-div gap-2'>
-            {/* <button className='sign-link sign-in'>تسجيل </button> */}
             <FormLogin />
           </Nav>
         </Navbar.Collapse>
