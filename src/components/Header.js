@@ -7,6 +7,7 @@ import svgl from '../images/logo.svg';
 import { Reveal } from './Reveal';
 import ProductInquiryForm from './ProductInquiryForm';
 import emailjs from '@emailjs/browser';
+import FormLogin from './FormLogin';
 
 function Header() {
   const [show, setShow] = useState(false);
@@ -69,7 +70,7 @@ function Header() {
             </Reveal>
           </Nav>
           <Nav className='sign-div gap-2'>
-            <button className='sign-link sign-in' onClick={handleShow}>تسجيل </button>
+            <FormLogin />
           </Nav>
         </Navbar.Collapse>
       </Container>

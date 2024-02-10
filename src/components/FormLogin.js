@@ -28,7 +28,7 @@ const FormLogin = () => {
             <div className="modal-footer">
               <div className="m-auto">
                 <button type="button" id="btnn" className="btn btn-danger mx-2" data-bs-dismiss="modal">اغلاق</button>
-                <button type="button" className="btn btn-success mx-2" onClick={handleShow}>أنا مهتم</button>
+                <button type="button" className="btn btn-success mx-2" data-bs-dismiss="modal" onClick={handleShow}>أنا مهتم</button>
               </div>
             </div>
           </div>
