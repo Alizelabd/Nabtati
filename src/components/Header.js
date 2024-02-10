@@ -47,7 +47,6 @@ function Header() {
           <Nav className='sign-div gap-2'>
             {/* <button className='sign-link sign-in'>تسجيل </button> */}
             <FormLogin />
-
           </Nav>
         </Navbar.Collapse>
       </Container>
