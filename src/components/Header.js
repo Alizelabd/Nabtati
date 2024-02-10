@@ -1,6 +1,6 @@
-import React, { useState } from 'react'; 
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav'; 
+import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import svgl from '../images/logo.svg';
@@ -46,12 +46,12 @@ function Header() {
           </Nav>
           <Nav className='sign-div gap-2'>
             {/* <button className='sign-link sign-in'>تسجيل </button> */}
-          <FormLogin/>
+            <FormLogin />
 
           </Nav>
         </Navbar.Collapse>
       </Container>
-  
+
       <ProductInquiryForm
         show={show}
         handleClose={handleClose}
