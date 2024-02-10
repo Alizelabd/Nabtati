@@ -21,47 +21,47 @@ function ProductsPage() {
 
   return (
     <>
-      
-        <Header />
 
+      <Header />
+
+      <Container>
         <Container>
-          <Container>
-            <Breadcrumb className="breadcrumbs">
-              <BreadcrumbLink
-                to="/"
-                label="الــرئـيـسـيـه"
-                className="non-link"
-              />
-              <BreadcrumbLink
-                to="/OurProducts"
-                label="مـنـتـجـاتـنـا"
-                className="non-link"
-              />
-              <BreadcrumbLink
-                to={`/products/${ProductId}`}
-                label={product.name}
-                active
-              />
-            </Breadcrumb>
-          </Container>
-
-          <ProductCard
-            imageUrl={product.imageUrl}
-            name={product.name}
-            description={product.description}
-            price={product.price}
-          />
-
-          <div>
-            <ProductCare
-              light={product.light}
-              watering={product.watering}
-              temp={product.temp}
+          <Breadcrumb className="breadcrumbs">
+            <BreadcrumbLink
+              to="/"
+              label="الــرئـيـسـيـه"
+              className="non-link"
             />
-          </div>
+            <BreadcrumbLink
+              to="/OurProducts"
+              label="مـنـتـجـاتـنـا"
+              className="non-link"
+            />
+            <BreadcrumbLink
+              to={`/products/${ProductId}`}
+              label={product.name}
+              active
+            />
+          </Breadcrumb>
         </Container>
-        <Footer />
-      
+
+        <ProductCard
+          imageUrl={product.imageUrl}
+          name={product.name}
+          description={product.description}
+          price={product.price}
+        />
+
+        <div>
+          <ProductCare
+            light={product.light}
+            watering={product.watering}
+            temp={product.temp}
+          />
+        </div>
+      </Container>
+      <Footer />
+
     </>
   );
 }
