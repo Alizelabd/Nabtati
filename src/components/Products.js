@@ -4,16 +4,16 @@ import sabara from '../images/sabra.png';
 import Fee from '../images/fe.jpeg';
 import Nassem from '../images/naseem.jpeg';
 import like from '../images/likeicon.svg';
-import {useState} from 'react';
-import productsData from '../data/ProductsData';
+// import { useState } from 'react';
+import product from '../data/ProductsData';
 function Prodcuts() {
-    const [isLiked, setIsLiked] = useState(Array(productsData.length).fill(false));
+    // const [isLiked, setIsLiked] = useState(Array(productsData.length).fill(false));
 
-    const toggleLike = (index) => {
-        const newIsLiked = [...isLiked];
-        newIsLiked[index] = !newIsLiked[index];
-        setIsLiked(newIsLiked);
-    };
+    // const toggleLike = (index) => {
+    //     const newIsLiked = [...isLiked];
+    //     newIsLiked[index] = !newIsLiked[index];
+    //     setIsLiked(newIsLiked);
+    // };
 
     return (
         <>
@@ -63,19 +63,19 @@ function Prodcuts() {
                         <Link to={`/ProdcutPage/3`} className="text-decoration-none">
                             <Card.Img className="rounded-3" variant="top" src={Nassem} />
                         </Link>
-                            <Card.Body className="px-0 d-flex flex-column justify-content-between py-3">
-                                <div className="d-flex fw-bold justify-content-between">
-                                    <Card.Title>{product.name}</Card.Title>
-                                    <span>{product.price}</span>
-                                </div>
-                                <Card.Text>
-                                    نبتة بونساي حجم صغير في حوض حجري
-                                </Card.Text>
-                                <div className="card-bottom d-flex">
-                                    <Link to={`/ProdcutPage/3`} className="btn-card flex-fill" variant="primary">المزيد من التفاصيل</Link>
-                                    <img className="like-icon" src={like} alt="likeIcon" />
-                                </div>
-                            </Card.Body>
+                        <Card.Body className="px-0 d-flex flex-column justify-content-between py-3">
+                            <div className="d-flex fw-bold justify-content-between">
+                                <Card.Title>{product.name}</Card.Title>
+                                <span>{product.price}</span>
+                            </div>
+                            <Card.Text>
+                                نبتة بونساي حجم صغير في حوض حجري
+                            </Card.Text>
+                            <div className="card-bottom d-flex">
+                                <Link to={`/ProdcutPage/3`} className="btn-card flex-fill" variant="primary">المزيد من التفاصيل</Link>
+                                <img className="like-icon" src={like} alt="likeIcon" />
+                            </div>
+                        </Card.Body>
                     </Card>
                 </Col>
             </Row>
