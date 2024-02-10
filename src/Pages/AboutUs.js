@@ -2,7 +2,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import brandIcon from "../images/icongray.jpg";
 import { Container } from "react-bootstrap";
-import AnimatedPage from "../components/AnimatedPage";
 import { Reveal } from "../components/Reveal";
 function AboutUs() {
   return (

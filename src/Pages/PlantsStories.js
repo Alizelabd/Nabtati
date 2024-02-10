@@ -11,7 +11,6 @@ import ProductInquiryForm from "../components/ProductInquiryForm";
 import emailjs from "@emailjs/browser";
 
 import "../css/scss/_breadcrumbsLink.scss";
-import AnimatedPage from "../components/AnimatedPage";
 
 function PlantsStories() {
   const [show, setShow] = useState(false);

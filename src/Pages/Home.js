@@ -5,7 +5,6 @@ import UserReviewPage from "../components/UserReviewPage";
 import FamousPlant from "../components/FamousPlant";
 import Prodcuts from "../components/Products";
 import Header from "../components/Header";
-import AnimatedPage from "../components/AnimatedPage";
 import { Reveal } from "../components/Reveal";
 
 function Home() {

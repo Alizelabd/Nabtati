@@ -10,7 +10,6 @@ import ProductCare from "../components/Productscare";
 import BreadcrumbLink from "../components/BreadcrumbLink";
 
 import "../css/scss/_breadcrumbsLink.scss";
-import AnimatedPage from "../components/AnimatedPage";
 
 function ProductsPage() {
   const { ProductId } = useParams();

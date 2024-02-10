@@ -2,7 +2,6 @@ import { Container } from "react-bootstrap";
 import Prodcuts from "../components/Products";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import AnimatedPage from "../components/AnimatedPage";
 function OurProducts() {
   return (
     <>
