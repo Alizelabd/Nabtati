@@ -1,11 +1,9 @@
 import { Container } from "react-bootstrap";
-import searchIcon from '../images/search 1.svg';
 import Footer from '../components/Footer';
 import UserReviewPage from "../components/UserReviewPage";
 import FamousPlant from "../components/FamousPlant";
 import Prodcuts from "../components/Products";
 import Header from "../components/Header";
-import { Reveal } from "../components/Reveal";
 
 function Home() {
     return (
