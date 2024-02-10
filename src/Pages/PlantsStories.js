@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import { Container, Breadcrumb } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+=======
+import React, { useState } from 'react';
+import { Container, Breadcrumb } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+>>>>>>> fixing-the-scroll-after-routing
 
 import products from "../data/ProductsData";
 import Header from "../components/Header";
@@ -13,6 +20,14 @@ import emailjs from "@emailjs/browser";
 import "../css/scss/_breadcrumbsLink.scss";
 
 function PlantsStories() {
+<<<<<<< HEAD
+=======
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+>>>>>>> fixing-the-scroll-after-routing
   const [show, setShow] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [setStateMessage] = useState("");
