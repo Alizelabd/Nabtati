@@ -56,7 +56,12 @@ nav {
   padding-bottom: 35px;
 }
 nav .navbar-nav {
-  gap: 45px;
+  gap: 25px;
+}
+@media (max-width: 768px) {
+  nav .navbar-nav {
+    gap: 5px;
+  }
 }
 nav .nav-link {
   font-size: clamp(16px, 20px, 4vw);
@@ -96,11 +101,6 @@ nav .new-sign-in:hover {
   color: #ffffff;
 }
 
-@media (max-width: 768px) {
-  .navbar-nav {
-    gap: 10px;
-  }
-}
 /* End Header Style-------------*/
 /* Start Main Hero Style-------------*/
 .main-hero {
@@ -163,14 +163,16 @@ nav .new-sign-in:hover {
 .swiper {
   padding: 60px 100px !important;
 }
-
+.swiper .swiper-slide {
+  background-color: #ffffff;
+}
 
 .famous-plants .slid-div {
   border-radius: 25px;
   direction: ltr;
   margin: auto;
   padding: 30px;
-  min-height: 500px;
+  min-height: 400px;
   align-items: center;
 }
 
@@ -190,14 +192,6 @@ nav .new-sign-in:hover {
     justify-content: center;
   }
 }
-.swiper-button-prev {
-  color: #88ab8e !important;
-}
-
-.swiper-button-next {
-  color: #88ab8e !important;
-}
-
 .famous-plants .slid-div .image-plant {
   width: 250px;
   height: 250px;
@@ -212,6 +206,7 @@ nav .new-sign-in:hover {
 
 .famous-plants .slid-div .info {
   text-align: center;
+  background-color: #ffffff;
   border-radius: 40px;
 }
 
