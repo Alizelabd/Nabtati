@@ -1,46 +1,50 @@
 import React from "react";
 import { useState } from "react";
 import ProductInquiryForm from "./ProductInquiryForm";
-
+import { Button, Modal } from "react-bootstrap";
 const FormLogin = () => {
   const [show, setShow] = useState(false);
+  const [alert, setAlert] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [setStateMessage] = useState('');
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  // for alert box ---
+  const alertShow = () => setAlert(true);
+  const alertClose = () => setAlert(false);
+  const formShow = () => {
+    alertClose();
+    handleShow();
+  }
   return (
 
     <>
-      <button type="button" className='sign-link sign-in' data-bs-toggle="modal" data-bs-target="#ModalLogin">
+      <button type="button" className='sign-link sign-in' onClick={alertShow}>
         تسجيل
       </button>
-      <div dir='rtl' className="modal fade" id="ModalLogin" tabIndex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="ModalLabel">مرحبا بك </h5>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div className="modal-body">
-              لايتوفر حالياً التسجيل في الموقع إذا كنت مهتم في أحدى النباتات ارسل لنا طلبك
-            </div>
-            <div className="modal-footer">
-              <div className="m-auto">
-                <button type="button" id="btnn" className="btn btn-danger mx-2" data-bs-dismiss="modal">اغلاق</button>
-                <button type="button" className="btn btn-success mx-2" data-bs-dismiss="modal" onClick={handleShow}>أنا مهتم</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Modal show={alert} onHide={alertClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>تنبيه</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          لايتوفر حالياً التسجيل في الموقع إذا كنت مهتم في أحدى النباتات ارسل لنا طلبك
+        </Modal.Body>
+        <Modal.Footer className="text-center">
+          <Button variant="secondary" onClick={alertClose}>
+            إغلاق
+          </Button>
+          <Button variant="success" onClick={formShow}>
+            أنا مهتم
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <ProductInquiryForm
         show={show}
         handleClose={handleClose}
         showAlert={showAlert}
         setShowAlert={setShowAlert}
         setStateMessage={setStateMessage}
-
       />
     </>
 

@@ -111,6 +111,7 @@ const ProductInquiryForm = ({ show, handleClose, showAlert, setShowAlert }) => {
               <Form.Control
                 type="email"
                 id="email"
+                
                 name="email"
                 onChange={handleFormFieldChange}
                 placeholder="name@example.com"
