@@ -59,10 +59,10 @@ const ProductInquiryForm = ({ show, handleClose, showAlert, setShowAlert }) => {
           // If less than 2, increase the count and save it
           emailjs
             .send(
-              "service_br7pc65",
-              "template_d675cby",
+              "service_4b5yn4v",
+              "template_uykwfy4",
               templateFormData,
-              "0Vrk_eCV-opU4mZPo"
+              "ODy0NGK6EYA9e1gfI"
             )
             .then((result) => {
               toast.success("تم إرسال البريد بنجاح");
@@ -111,7 +111,7 @@ const ProductInquiryForm = ({ show, handleClose, showAlert, setShowAlert }) => {
               <Form.Control
                 type="email"
                 id="email"
-                
+
                 name="email"
                 onChange={handleFormFieldChange}
                 placeholder="name@example.com"

@@ -19,7 +19,7 @@ const ProductCard = ({ imageUrl, name, description, price, onPurchase }) => {
 
   const handleInquirySubmit = (templateFormData) => {
     emailjs
-      .send('service_br7pc65', 'template_d675cby', templateFormData, '0Vrk_eCV-opU4mZPo')
+      .send('service_4b5yn4v', "template_uykwfy4", templateFormData, "ODy0NGK6EYA9e1gfI")
       .then((result) => {
         setStateMessage('تم إرسال البريد بنجاح');
         setShowAlert(true);
@@ -54,13 +54,13 @@ const ProductCard = ({ imageUrl, name, description, price, onPurchase }) => {
               <Container>
                 <div className="Product_label d-md-flex justify-content-between" style={{ marginBottom: '10px' }}>
                   <Card.Title style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{name}</Card.Title>
-                  <div onClick={() => seIsLiked(!isLiked)} style={{cursor: "pointer"}}>
-                    <img src={isLiked ? heartFill : heartUnFill} alt="Heart" style={{width: '20px', height: '20px', marginTop: '6px'}}/>
+                  <div onClick={() => seIsLiked(!isLiked)} style={{ cursor: "pointer" }}>
+                    <img src={isLiked ? heartFill : heartUnFill} alt="Heart" style={{ width: '20px', height: '20px', marginTop: '6px' }} />
                   </div>
 
                 </div>
 
-                <div style={{marginBottom: '20px' }}>
+                <div style={{ marginBottom: '20px' }}>
                   <Col xs={9}>
                     {Array.from({ length: 5 }).map((_, index) => (
                       <svg key={index} xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17" fill="none" style={{ marginRight: '2px' }}>
@@ -113,7 +113,7 @@ const ProductCard = ({ imageUrl, name, description, price, onPurchase }) => {
         setStateMessage={setStateMessage}
         onInquirySubmit={handleInquirySubmit}
       />
-      
+
     </>
   );
 };

@@ -15,15 +15,15 @@ function Header() {
   const [setStateMessage] = useState("");
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleShow = () => setShow(true);
 
   const handleInquirySubmit = (templateFormData) => {
     emailjs
       .send(
-        "service_br7pc65",
-        "template_d675cby",
+        "service_4b5yn4v",
+        "template_uykwfy4",
         templateFormData,
-        "0Vrk_eCV-opU4mZPo"
+        "ODy0NGK6EYA9e1gfI"
       )
       .then((result) => {
         setStateMessage("تم إرسال البريد بنجاح");
