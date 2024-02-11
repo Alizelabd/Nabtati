@@ -10,7 +10,7 @@ const UserReviewPage = () => {
       <Reveal>
         <div className="grid-system">
           {userReviewData.map((review) => (
-            <div key={review.id}>
+            <div className="box-shadow " style={{ borderRadius: '16px' }} key={review.id}>
               <UserReviewCard
                 userProfilePicture={review.userProfilePicture}
                 reviewText={review.reviewText}

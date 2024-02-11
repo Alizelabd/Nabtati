@@ -35,8 +35,10 @@ function Home() {
             <Container>
                 <Prodcuts />
             </Container>
-            <Container className="review-container py-4">
-                <h2 className="text-title fw-bold" >تجارب عملاءَنا</h2>
+            <div className="caption text-center py-4">
+                <h2 className="text-title fw-bold">تجارب عملاءَنا</h2>
+            </div>
+            <Container className="review-container">
                 <UserReviewPage />
             </Container>
             <Footer />

@@ -55,6 +55,8 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 25px;
+  place-content: center;
+  align-items: stretch;
 }
 
 /* Start Header Style-------------*/
@@ -474,9 +476,7 @@ nav .new-sign-in:hover {
 }
 
 .review-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-bottom: 25px;
 }
 
 .image-respon {

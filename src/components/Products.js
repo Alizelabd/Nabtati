@@ -4,17 +4,8 @@ import sabara from '../images/sabra.png';
 import Fee from '../images/fe.jpeg';
 import Nassem from '../images/naseem.jpeg';
 import like from '../images/likeicon.svg';
-// import { useState } from 'react';
 import product from '../data/ProductsData';
 function Prodcuts() {
-    // const [isLiked, setIsLiked] = useState(Array(productsData.length).fill(false));
-
-    // const toggleLike = (index) => {
-    //     const newIsLiked = [...isLiked];
-    //     newIsLiked[index] = !newIsLiked[index];
-    //     setIsLiked(newIsLiked);
-    // };
-
     return (
         <>
             <Row>
