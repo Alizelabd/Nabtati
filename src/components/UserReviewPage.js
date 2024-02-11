@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import UserReviewCard from "../components/UserReviewcard";
 import userReviewData from "../data/userReviewData";
 import { Reveal } from "./Reveal";
@@ -8,18 +8,18 @@ const UserReviewPage = () => {
   return (
     <Container>
       <Reveal>
-        <Row className="justify-content-around">
+        <div className="grid-system">
           {userReviewData.map((review) => (
-            <Col key={review.id} xs={12} sm={12} md={6} lg={4}>
+            <div key={review.id}>
               <UserReviewCard
                 userProfilePicture={review.userProfilePicture}
                 reviewText={review.reviewText}
                 userName={review.userName}
                 starRating={review.starRating}
               />
-            </Col>
+            </div>
           ))}
-        </Row>
+        </div>
       </Reveal>
     </Container>
   );

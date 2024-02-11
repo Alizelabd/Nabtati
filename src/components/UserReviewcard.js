@@ -27,7 +27,6 @@ const UserReviewCard = ({ userProfilePicture, reviewText, userName, starRating }
           </svg>
           <br />
 
-
           <Card.Text style={{ marginBottom: '20px' }}>{reviewText}</Card.Text>
           <Row>
             <Col xs={9}>
