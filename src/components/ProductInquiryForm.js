@@ -5,7 +5,8 @@ import Modal from "react-bootstrap/Modal";
 import emailjs from "@emailjs/browser";
 import toast from 'react-hot-toast';
 const EMAIL_LIMIT_KEY = "emailLimit";
-const serverId = process.env.REACT_APP_SERVER_ID;
+//now you don't need to use the secret key directly in your code
+// const serverId = process.env.REACT_APP_SERVER_ID;
 
 // Now 'serverId' contains your secret ke
 const INITIAL_FORM_STATE = {
@@ -15,7 +16,7 @@ const INITIAL_FORM_STATE = {
   errorMessage: null,
 };
 const ProductInquiryForm = ({ show, handleClose, showAlert, setShowAlert }) => {
-  console.log(serverId);
+  
   const [sendLimit, setSendLimit] = useState(null);
   const [formState, setFormState] = useState(INITIAL_FORM_STATE);
   const { name, email, message } = formState;
@@ -60,10 +61,11 @@ const ProductInquiryForm = ({ show, handleClose, showAlert, setShowAlert }) => {
           // If less than 2, increase the count and save it
           emailjs
             .send(
-              process.env.SERVER_ID,
-              'template_lcpmefz',
+              //service id and template id and public key from env file
+              process.env.REACT_APP_SERVER_ID,
+              process.env.REACT_APP_TEMPLATE_ID,
               templateFormData,
-              'ODy0NGK6EYA9e1gfI'
+              process.env.REACT_APP_PUBLIC_KEY
             )
             .then((result) => {
               toast.success("تم إرسال البريد بنجاح");
