@@ -7,7 +7,6 @@ import QuantitySelector from './QuantitySelector';
 import ProductInquiryForm from './ProductInquiryForm';
 import emailjs from '@emailjs/browser';
 
-
 const ProductCard = ({ imageUrl, name, description, price, onPurchase }) => {
   const [isLiked, seIsLiked] = useState(false);
   const [show, setShow] = useState(false);
