@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import svgl from '../images/logo.svg';
 import { Reveal } from './Reveal';
 import ProductInquiryForm from './ProductInquiryForm';
-import emailjs from '@emailjs/browser';
+// import emailjs from '@emailjs/browser';
 import FormLogin from './FormLogin';
 
 function Header() {
@@ -17,26 +17,26 @@ function Header() {
   const handleClose = () => setShow(false);
   // const handleShow = () => setShow(true);
 
-  const handleInquirySubmit = (templateFormData) => {
-    emailjs
-      .send(
-        "service_4b5yn4v",
-        "template_uykwfy4",
-        templateFormData,
-        "ODy0NGK6EYA9e1gfI"
-      )
-      .then((result) => {
-        setStateMessage("تم إرسال البريد بنجاح");
-        setShowAlert(true);
-        console.log(result.status);
-        handleClose();
-      })
-      .catch((error) => {
-        setStateMessage("حدث خطأ ما لم يتم إرسال البريد");
-        setShowAlert(true);
-        console.log(error);
-      });
-  };
+  // const handleInquirySubmit = (templateFormData) => {
+  //   emailjs
+  //     .send(
+  //       "service_4b5yn4v",
+  //       "template_uykwfy4",
+  //       templateFormData,
+  //       "ODy0NGK6EYA9e1gfI"
+  //     )
+  //     .then((result) => {
+  //       setStateMessage("تم إرسال البريد بنجاح");
+  //       setShowAlert(true);
+  //       console.log(result.status);
+  //       handleClose();
+  //     })
+  //     .catch((error) => {
+  //       setStateMessage("حدث خطأ ما لم يتم إرسال البريد");
+  //       setShowAlert(true);
+  //       console.log(error);
+  //     });
+  // };
 
   return (
     <Navbar
@@ -81,7 +81,6 @@ function Header() {
         showAlert={showAlert}
         setShowAlert={setShowAlert}
         setStateMessage={setStateMessage}
-        onInquirySubmit={handleInquirySubmit}
       />
     </Navbar>
   );

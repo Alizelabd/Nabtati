@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 import plant_info from "../images/plant_info.png";
 import BreadcrumbLink from "../components/BreadcrumbLink";
 import ProductInquiryForm from "../components/ProductInquiryForm";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 
 import "../css/scss/_breadcrumbsLink.scss";
 
@@ -26,26 +26,26 @@ function PlantsStories() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleInquirySubmit = (templateFormData) => {
-    emailjs
-      .send(
-        "service_4b5yn4v",
-        "template_uykwfy4",
-        templateFormData,
-        "qQ9ELqD_vXl5jM8iGflkc"
-      )
-      .then((result) => {
-        setStateMessage("تم إرسال البريد بنجاح");
-        setShowAlert(true);
-        console.log(result.status);
-        handleClose();
-      })
-      .catch((error) => {
-        setStateMessage("حدث خطأ ما لم يتم إرسال البريد");
-        setShowAlert(true);
-        console.log(error);
-      });
-  };
+  // const handleInquirySubmit = (templateFormData) => {
+  //   emailjs
+  //     .send(
+  //       "service_4b5yn4v",
+  //       "template_uykwfy4",
+  //       templateFormData,
+  //       "qQ9ELqD_vXl5jM8iGflkc"
+  //     )
+  //     .then((result) => {
+  //       setStateMessage("تم إرسال البريد بنجاح");
+  //       setShowAlert(true);
+  //       console.log(result.status);
+  //       handleClose();
+  //     })
+  //     .catch((error) => {
+  //       setStateMessage("حدث خطأ ما لم يتم إرسال البريد");
+  //       setShowAlert(true);
+  //       console.log(error);
+  //     });
+  // };
 
   const { ProductId } = useParams();
   const product = products.find((product) => product.id === ProductId);
@@ -56,7 +56,6 @@ function PlantsStories() {
 
   return (
     <div className="story-section">
-
       <Header />
       <Container className="py-4">
         <Container>
@@ -93,7 +92,7 @@ function PlantsStories() {
         </div>
         <div className="d-flex needs box-shadow my-4">
           <div className="box2_text">
-            <text> احتياجات {product.name}</text>
+            <div> احتياجات {product.name}</div>
           </div>
           <div className="plant_info">
             <img src={plant_info} alt={product.name} />
@@ -111,9 +110,7 @@ function PlantsStories() {
         showAlert={showAlert}
         setShowAlert={setShowAlert}
         setStateMessage={setStateMessage}
-        onInquirySubmit={handleInquirySubmit}
       />
-
     </div>
   );
 }

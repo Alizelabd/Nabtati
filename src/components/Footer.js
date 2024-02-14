@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Container, Col, Form, Button } from 'react-bootstrap';
 import logo from '../images/greenLogo.svg';
-import '../css/scss/_Footer.scss'; 
+import '../css/scss/_Footer.scss';
 import { Link } from 'react-router-dom';
 
 import ProductInquiryForm from './ProductInquiryForm';
@@ -45,21 +45,28 @@ const Footer = () => {
       email_id: email,
       message: "",
     };
-
-    emailjs.send(
-      "service_4b5yn4v",
-      "template_uykwfy4",
-      templateFormData,
-      "ODy0NGK6EYA9e1gfI"
-    ).then((result) => {
-        console.log(result.status);
-        toast.success("تم تسجيلك في النشرة البريدية")
-        handleClose();
-      })
-      .catch((error) => {
-        console.log('FAILED...', error.text);
-        toast.error("حدث خطأ")
-      });
+    if (email === '') {
+      toast.error('من فضلك ادخل الإيميل');
+    } else {
+      let emailRegex = /^[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6}$/;
+      if (emailRegex.test(email)) {
+        emailjs.send(
+          process.env.REACT_APP_SERVER_ID,
+          process.env.REACT_APP_TEMPLATE_ID,
+          templateFormData,
+          process.env.REACT_APP_PUBLIC_KEY
+        ).then((result) => {
+          console.log(result.status);
+          toast.success("تم تسجيلك في النشرة البريدية")
+        })
+          .catch((error) => {
+            console.log('FAILED...', error.text);
+            toast.error("حدث خطأ")
+          });
+      } else {
+        toast.error("ادخل بريد إلكتروني صالح");
+      }
+    }
   };
 
   return (
@@ -94,7 +101,7 @@ const Footer = () => {
                 <br />
                 <Form.Text className="text-muted">كن مطلعًا على آخر الأخبار موقع نبتتي</Form.Text>
                 <div className="d-flex">
-                  <Form.Control onChange={e => setEmail(e.target.value)} type="email" placeholder="البريد الالكتروني" className="form-control" name="user_email"/>
+                  <Form.Control onChange={e => setEmail(e.target.value)} type="email" placeholder="البريد الالكتروني" className="form-control" name="user_email" />
                   <Button className="button" type='submit' >اشتراك</Button>
                 </div>
               </Form.Group>

@@ -5,7 +5,7 @@ import heartUnFill from '../images/heartUnFill.svg';
 import heartFill from '../images/heartFill.svg';
 import QuantitySelector from './QuantitySelector';
 import ProductInquiryForm from './ProductInquiryForm';
-import emailjs from '@emailjs/browser';
+// import emailjs from '@emailjs/browser';
 
 const ProductCard = ({ imageUrl, name, description, price, onPurchase }) => {
   const [isLiked, seIsLiked] = useState(false);
@@ -16,21 +16,21 @@ const ProductCard = ({ imageUrl, name, description, price, onPurchase }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleInquirySubmit = (templateFormData) => {
-    emailjs
-      .send('service_4b5yn4v', "template_uykwfy4", templateFormData, "ODy0NGK6EYA9e1gfI")
-      .then((result) => {
-        setStateMessage('تم إرسال البريد بنجاح');
-        setShowAlert(true);
-        console.log(result.status);
-        handleClose();
-      })
-      .catch((error) => {
-        setStateMessage('حدث خطأ ما لم يتم إرسال البريد');
-        setShowAlert(true);
-        console.log(error);
-      });
-  };
+  // const handleInquirySubmit = (templateFormData) => {
+  //   emailjs
+  //     .send('service_4b5yn4v', "template_uykwfy4", templateFormData, "ODy0NGK6EYA9e1gfI")
+  //     .then((result) => {
+  //       setStateMessage('تم إرسال البريد بنجاح');
+  //       setShowAlert(true);
+  //       console.log(result.status);
+  //       handleClose();
+  //     })
+  //     .catch((error) => {
+  //       setStateMessage('حدث خطأ ما لم يتم إرسال البريد');
+  //       setShowAlert(true);
+  //       console.log(error);
+  //     });
+  // };
   return (
     <>
       <Card style={{ border: 'none', padding: '20px', marginTop: '-40px', backgroundColor: "transparent", marginBottom: "50px" }}>
@@ -110,7 +110,6 @@ const ProductCard = ({ imageUrl, name, description, price, onPurchase }) => {
         showAlert={showAlert}
         setShowAlert={setShowAlert}
         setStateMessage={setStateMessage}
-        onInquirySubmit={handleInquirySubmit}
       />
 
     </>

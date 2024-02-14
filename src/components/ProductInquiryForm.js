@@ -6,7 +6,6 @@ import emailjs from "@emailjs/browser";
 import toast from 'react-hot-toast';
 const EMAIL_LIMIT_KEY = "emailLimit";
 
-// Now 'serverId' contains your secret ke
 const INITIAL_FORM_STATE = {
   name: "",
   email: "",
@@ -51,7 +50,7 @@ const ProductInquiryForm = ({ show, handleClose, showAlert, setShowAlert }) => {
     };
 
     if (name === "" || email === "" || message === "") {
-      toast.error('املئ الحقول من فضلك')
+      toast.error('املئ الحقول من فضلك');
     } else {
       let emailRegex = /^[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6}$/;
       if (emailRegex.test(email)) {
