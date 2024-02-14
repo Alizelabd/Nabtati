@@ -5,8 +5,6 @@ import Modal from "react-bootstrap/Modal";
 import emailjs from "@emailjs/browser";
 import toast from 'react-hot-toast';
 const EMAIL_LIMIT_KEY = "emailLimit";
-//now you don't need to use the secret key directly in your code
-// const serverId = process.env.REACT_APP_SERVER_ID;
 
 // Now 'serverId' contains your secret ke
 const INITIAL_FORM_STATE = {
