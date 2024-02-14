@@ -40,10 +40,10 @@ function PlantsStories() {
         console.log(result.status);
         handleClose();
       })
-      .catch((error) => {
-        setStateMessage("حدث خطأ ما لم يتم إرسال البريد");
+      .catch((message) => {
+        setStateMessage("حدث خطأ ");
         setShowAlert(true);
-        console.log(error);
+        console.log(MessageChannel);
       });
   };
 

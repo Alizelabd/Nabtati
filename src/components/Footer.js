@@ -51,7 +51,7 @@ const Footer = () => {
       "template_uykwfy4",
       templateFormData,
       "ODy0NGK6EYA9e1gfI"
-    ).then((result) => {
+    ).catch((result) => {
         console.log(result.status);
         toast.success("تم تسجيلك في النشرة البريدية")
         handleClose();

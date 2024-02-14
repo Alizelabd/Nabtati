@@ -64,7 +64,7 @@ const ProductInquiryForm = ({ show, handleClose, showAlert, setShowAlert }) => {
               templateFormData,
               "ODy0NGK6EYA9e1gfI"
             )
-            .then((result) => {
+            .catch((result) => {
               toast.success("تم إرسال البريد بنجاح");
               console.log(result.status);
               localStorage.setItem(EMAIL_LIMIT_KEY, sendLimit + 1);
@@ -74,9 +74,13 @@ const ProductInquiryForm = ({ show, handleClose, showAlert, setShowAlert }) => {
               }, 5000);
             })
             .catch((error) => {
-              toast.error("حدث خطأ ما لم يتم إرسال البريد");
-              console.log(error);
-            });
+                        if (error.status === 400) {
+                          toast.error("المعذرة لا تستطيع إرسال المزيد من الرسائل ، فقط انتظر إلى يتم الرد عليك");
+                        } else {
+                          toast.error('حدث خطأ ما');
+                          console.error('خطأ أثناء إرسال البريد:', error);
+                        }
+                      });
         } else {
           // If 2 or more, return false
           toast.error(
